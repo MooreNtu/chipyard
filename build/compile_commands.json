@@ -1,0 +1,92 @@
+[
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/pwm.dir/pwm.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/pwm.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/pwm.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/blkdev.dir/blkdev.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/blkdev.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/blkdev.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/accum.dir/accum.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/accum.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/accum.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/charcount.dir/charcount.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/charcount.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/charcount.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-g++   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/cpp-hello.dir/cpp-hello.cpp.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/cpp-hello.cpp",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/cpp-hello.cpp"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/nic-loopback.dir/nic-loopback.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/nic-loopback.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/nic-loopback.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/big-blkdev.dir/big-blkdev.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/big-blkdev.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/big-blkdev.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/pingd.dir/pingd.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/pingd.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/pingd.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/streaming-passthrough.dir/streaming-passthrough.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/streaming-passthrough.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/streaming-passthrough.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/streaming-fir.dir/streaming-fir.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/streaming-fir.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/streaming-fir.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/nvdla.dir/nvdla.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/nvdla.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/nvdla.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/spiflashread.dir/spiflashread.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/spiflashread.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/spiflashread.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/spiflashwrite.dir/spiflashwrite.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/spiflashwrite.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/spiflashwrite.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/fft.dir/fft.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/fft.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/fft.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/gcd.dir/gcd.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/gcd.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/gcd.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/hello.dir/hello.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/hello.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/hello.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/mt-hello.dir/mt-hello.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/mt-hello.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/mt-hello.c"
+},
+{
+  "directory": "/home/frank/hesl/test_riscv/chipyard/chipyard/build",
+  "command": "riscv64-unknown-elf-gcc   -g -std=gnu99 -O2 -Wall -Wextra -fno-common -fno-builtin-printf -march=rv64imafd -mabi=lp64d -mcmodel=medany -specs=htif_nano.specs -o CMakeFiles/symmetric.dir/symmetric.c.o -c /home/frank/hesl/test_riscv/chipyard/chipyard/tests/symmetric.c",
+  "file": "/home/frank/hesl/test_riscv/chipyard/chipyard/tests/symmetric.c"
+}
+]

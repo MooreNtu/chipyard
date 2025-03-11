@@ -1,0 +1,4 @@
+-Xmx4G
+-Xms512M
+-XX:+UseG1GC
+-XX:MaxMetaspaceSize=512M

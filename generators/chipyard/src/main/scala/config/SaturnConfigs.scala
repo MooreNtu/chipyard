@@ -3,6 +3,13 @@ package chipyard
 import org.chipsalliance.cde.config.{Config}
 import saturn.common.{VectorParams}
 
+// import org.chipsalliance.cde.config.Config
+// import freechips.rocketchip.subsystem._
+// import freechips.rocketchip.rocket.{WithNBigCores, WithNMedCores, WithNSmallCores, WithRV32, WithFP16, WithHypervisor, With1TinyCore, WithScratchpadsOnly, WithCloneRocketTiles, WithB}
+
+
+
+
 // Rocket-integrated configs
 class MINV64D64RocketConfig extends Config(
   new saturn.rocket.WithRocketVectorUnit(64, 64, VectorParams.minParams) ++
@@ -11,8 +18,12 @@ class MINV64D64RocketConfig extends Config(
 
 class MINV128D64RocketConfig extends Config(
   new saturn.rocket.WithRocketVectorUnit(128, 64, VectorParams.minParams) ++
-  new freechips.rocketchip.rocket.WithNHugeCores(1) ++
-  new chipyard.config.AbstractConfig)
+  // new freechips.rocketchip.rocket.WithNHugeCores(1) ++
+  new freechips.rocketchip.system.LitexConfigBig1x1 ++
+  new chipyard.config.AbstractConfig
+  ){
+  println("Using Config: MINV128D64RocketConfig")
+}
 
 class MINV256D64RocketConfig extends Config(
   new saturn.rocket.WithRocketVectorUnit(256, 64, VectorParams.minParams) ++

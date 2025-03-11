@@ -41,7 +41,7 @@ class AbstractConfig extends Config(
   // ================================================
   // The IOBinders instantiate ChipTop IOs to match desired digital IOs
   // IOCells are generated for "Chip-like" IOs
-  new chipyard.iobinders.WithSerialTLIOCells ++
+  // new chipyard.iobinders.WithSerialTLIOCells ++
   new chipyard.iobinders.WithDebugIOCells ++
   new chipyard.iobinders.WithUARTIOCells ++
   new chipyard.iobinders.WithGPIOCells ++
@@ -77,11 +77,11 @@ class AbstractConfig extends Config(
     )
   )) ++
   new freechips.rocketchip.subsystem.WithNMemoryChannels(1) ++         /** Default 1 AXI-4 memory channels */
-  new freechips.rocketchip.subsystem.WithNoMMIOPort ++                 /** no top-level MMIO master port (overrides default set in rocketchip) */
-  new freechips.rocketchip.subsystem.WithNoSlavePort ++                /** no top-level MMIO slave port (overrides default set in rocketchip) */
+  // new freechips.rocketchip.subsystem.WithNoMMIOPort ++                 /** no top-level MMIO master port (overrides default set in rocketchip) */
+  // new freechips.rocketchip.subsystem.WithNoSlavePort ++                /** no top-level MMIO slave port (overrides default set in rocketchip) */
 
   // MMIO device section
-  new chipyard.config.WithUART ++                                  /** add a UART */
+  // new chipyard.config.WithUART ++                                  /** add a UART */
 
 
   // ================================================
@@ -101,7 +101,7 @@ class AbstractConfig extends Config(
   //   Set up Interrupts
   // ================================================
   // CLINT and PLIC related settings goes here
-  new freechips.rocketchip.subsystem.WithNExtTopInterrupts(0) ++    /** no external interrupts */
+  // new freechips.rocketchip.subsystem.WithNExtTopInterrupts(0) ++    /** no external interrupts */
 
 
   // ================================================
@@ -147,7 +147,7 @@ class AbstractConfig extends Config(
   new chipyard.config.WithFrontBusFrequency(500.0) ++               /** Default 500 MHz fbus */
   new chipyard.config.WithOffchipBusFrequency(500.0) ++             /** Default 500 MHz obus */
   new chipyard.config.WithInheritBusFrequencyAssignments ++         /** Unspecified clocks within a bus will receive the bus frequency if set */
-  new chipyard.config.WithNoSubsystemClockIO ++                     /** drive the subsystem diplomatic clocks from ChipTop instead of using implicit clocks */
+  new chipyard.config.WithNoSubsystemClockIO ++                       /** drive the subsystem diplomatic clocks from ChipTop instead of using implicit clocks */
 
   // reset
 

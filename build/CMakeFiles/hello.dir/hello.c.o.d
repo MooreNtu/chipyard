@@ -1,0 +1,26 @@
+CMakeFiles/hello.dir/hello.c.o: \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/tests/hello.c \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/stdio.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/_ansi.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/newlib-nano/newlib.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/_newlib_version.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/config.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/machine/ieeefp.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/features.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/cdefs.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/machine/_default_types.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/lib/gcc/riscv64-unknown-elf/13.2.0/include/stddef.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/lib/gcc/riscv64-unknown-elf/13.2.0/include/stdarg.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/reent.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/_ansi.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/_types.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/machine/_types.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/lock.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/assert.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/stdio.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/riscv-pk/encoding.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/tests/marchid.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/lib/gcc/riscv64-unknown-elf/13.2.0/include/stdint.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/stdint.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/_intsup.h \
+ /home/frank/hesl/test_riscv/chipyard/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/include/sys/_stdint.h

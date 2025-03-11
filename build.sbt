@@ -288,6 +288,7 @@ lazy val tapeout = (project in file("./tools/tapeout/"))
   .settings(chisel3Settings) // stuck on chisel3 and SFC
   .settings(commonSettings)
   .settings(scalaVersion := "2.13.10") // stuck on chisel3 2.13.10
+  // .settings(scalaVersion := "2.13.16")
   .settings(libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.9.2"))
 
 lazy val fixedpoint = freshProject("fixedpoint", file("./tools/fixedpoint"))
