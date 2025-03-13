@@ -43,12 +43,12 @@ class AbstractConfig extends Config(
   // IOCells are generated for "Chip-like" IOs
   // new chipyard.iobinders.WithSerialTLIOCells ++
   new chipyard.iobinders.WithDebugIOCells ++
-  new chipyard.iobinders.WithUARTIOCells ++
-  new chipyard.iobinders.WithGPIOCells ++
-  new chipyard.iobinders.WithSPIFlashIOCells ++
+  // new chipyard.iobinders.WithUARTIOCells ++
+  // new chipyard.iobinders.WithGPIOCells ++
+  // new chipyard.iobinders.WithSPIFlashIOCells ++
   new chipyard.iobinders.WithExtInterruptIOCells ++
   new chipyard.iobinders.WithChipIdIOCells ++
-  new chipyard.iobinders.WithCustomBootPin ++
+  // new chipyard.iobinders.WithCustomBootPin ++
   // The "punchthrough" IOBInders below don't generate IOCells, as these interfaces shouldn't really be mapped to ASIC IO
   // Instead, they directly pass through the DigitalTop ports to ports in the ChipTop
   new chipyard.iobinders.WithI2CPunchthrough ++
@@ -70,13 +70,13 @@ class AbstractConfig extends Config(
   //   Set up External Memory and IO Devices
   // ================================================
   // External memory section
-  new testchipip.serdes.WithSerialTL(Seq(                           /** add a serial-tilelink interface */
-    testchipip.serdes.SerialTLParams(
-      client = Some(testchipip.serdes.SerialTLClientParams(totalIdBits=4)), // serial-tilelink interface will master the FBUS, and support 4 idBits
-      phyParams = testchipip.serdes.DecoupledExternalSyncSerialPhyParams(phitWidth=32, flitWidth=32) // serial-tilelink interface with 32 lanes
-    )
-  )) ++
-  new freechips.rocketchip.subsystem.WithNMemoryChannels(1) ++         /** Default 1 AXI-4 memory channels */
+  // new testchipip.serdes.WithSerialTL(Seq(                           /** add a serial-tilelink interface */
+  //   testchipip.serdes.SerialTLParams(
+  //     client = Some(testchipip.serdes.SerialTLClientParams(totalIdBits=4)), // serial-tilelink interface will master the FBUS, and support 4 idBits
+  //     phyParams = testchipip.serdes.DecoupledExternalSyncSerialPhyParams(phitWidth=32, flitWidth=32) // serial-tilelink interface with 32 lanes
+  //   )
+  // )) ++
+  // new freechips.rocketchip.subsystem.WithNMemoryChannels(1) ++         /** Default 1 AXI-4 memory channels */
   // new freechips.rocketchip.subsystem.WithNoMMIOPort ++                 /** no top-level MMIO master port (overrides default set in rocketchip) */
   // new freechips.rocketchip.subsystem.WithNoSlavePort ++                /** no top-level MMIO slave port (overrides default set in rocketchip) */
 
@@ -88,13 +88,13 @@ class AbstractConfig extends Config(
   //   Set up Debug/Bringup/Testing Features
   // ================================================
   // JTAG
-  new freechips.rocketchip.subsystem.WithDebugSBA ++                /** enable the SBA (system-bus-access) feature of the debug module */
-  new chipyard.config.WithDebugModuleAbstractDataWords(8) ++        /** increase debug module data word capacity */
-  new freechips.rocketchip.subsystem.WithJtagDTM ++                 /** set the debug module to expose a JTAG port */
+  // new freechips.rocketchip.subsystem.WithDebugSBA ++                /** enable the SBA (system-bus-access) feature of the debug module */
+  // new chipyard.config.WithDebugModuleAbstractDataWords(8) ++        /** increase debug module data word capacity */
+  // new freechips.rocketchip.subsystem.WithJtagDTM ++                 /** set the debug module to expose a JTAG port */
 
-  // Boot Select Pins
-  new testchipip.boot.WithCustomBootPin ++                          /** add a custom-boot-pin to support pin-driven boot address */
-  new testchipip.boot.WithBootAddrReg ++                            /** add a boot-addr-reg for configurable boot address */
+  // // Boot Select Pins
+  // new testchipip.boot.WithCustomBootPin ++                          /** add a custom-boot-pin to support pin-driven boot address */
+  // new testchipip.boot.WithBootAddrReg ++                            /** add a boot-addr-reg for configurable boot address */
 
 
   // ================================================
@@ -136,16 +136,17 @@ class AbstractConfig extends Config(
   // DigitalTop-internal clocking settings
   new freechips.rocketchip.subsystem.WithDontDriveBusClocksFromSBus ++  /** leave the bus clocks undriven by sbus */
   new freechips.rocketchip.subsystem.WithClockGateModel ++              /** add default EICG_wrapper clock gate model */
+
   new chipyard.clocking.WithClockGroupsCombinedByName(("uncore",        /** create a "uncore" clock group tieing all the bus clocks together */
     Seq("sbus", "mbus", "pbus", "fbus", "cbus", "obus", "implicit", "clock_tap"),
     Seq("tile"))) ++
 
-  new chipyard.config.WithPeripheryBusFrequency(500.0) ++           /** Default 500 MHz pbus */
-  new chipyard.config.WithMemoryBusFrequency(500.0) ++              /** Default 500 MHz mbus */
-  new chipyard.config.WithControlBusFrequency(500.0) ++             /** Default 500 MHz cbus */
-  new chipyard.config.WithSystemBusFrequency(500.0) ++              /** Default 500 MHz sbus */
-  new chipyard.config.WithFrontBusFrequency(500.0) ++               /** Default 500 MHz fbus */
-  new chipyard.config.WithOffchipBusFrequency(500.0) ++             /** Default 500 MHz obus */
+  new chipyard.config.WithPeripheryBusFrequency(125.0) ++           /** Default 125 MHz pbus */
+  new chipyard.config.WithMemoryBusFrequency(125.0) ++              /** Default 125 MHz mbus */
+  new chipyard.config.WithControlBusFrequency(125.0) ++             /** Default 125 MHz cbus */
+  new chipyard.config.WithSystemBusFrequency(125.0) ++              /** Default 125 MHz sbus */
+  new chipyard.config.WithFrontBusFrequency(125.0) ++               /** Default 125 MHz fbus */
+  new chipyard.config.WithOffchipBusFrequency(125.0) ++             /** Default 125 MHz obus */
   new chipyard.config.WithInheritBusFrequencyAssignments ++         /** Unspecified clocks within a bus will receive the bus frequency if set */
   new chipyard.config.WithNoSubsystemClockIO ++                       /** drive the subsystem diplomatic clocks from ChipTop instead of using implicit clocks */
 
