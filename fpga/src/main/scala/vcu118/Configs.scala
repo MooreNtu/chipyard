@@ -20,6 +20,8 @@ import testchipip.serdes.{SerialTLKey}
 import chipyard._
 import chipyard.harness._
 
+import saturn.common.{VectorParams}
+
 class WithDefaultPeripherals extends Config((site, here, up) => {
   case PeripheryUARTKey => List(UARTParams(address = BigInt(0x64000000L)))
   case PeripherySPIKey => List(SPIParams(rAddress = BigInt(0x64001000L)))
@@ -48,9 +50,9 @@ class WithVCU118Tweaks extends Config(
   new WithFPGAFrequency(100) ++ // default 100MHz freq
   // harness binders
   new WithUART ++
-  new WithSPISDCard ++
+  // new WithSPISDCard ++
   new WithDDRMem ++
-  new WithJTAG ++
+  // new WithJTAG ++
   // other configuration
   new WithDefaultPeripherals ++
   new chipyard.config.WithTLBackingMemory ++ // use TL backing memory
@@ -63,6 +65,13 @@ class RocketVCU118Config extends Config(
   new WithVCU118Tweaks ++
   new chipyard.RocketConfig
 )
+
+class RocketSaturnVCU118Config extends Config(
+  new WithVCU118Tweaks ++
+  new chipyard.RocketConfig ++
+  new saturn.rocket.WithRocketVectorUnit(64, 64, VectorParams.minParams) ++
+  new freechips.rocketchip.rocket.WithNHugeCores(1) 
+) ////////////////frank add 
 // DOC include end: AbstractVCU118 and Rocket
 
 class BoomVCU118Config extends Config(

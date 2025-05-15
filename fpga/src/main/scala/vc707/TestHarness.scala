@@ -21,7 +21,7 @@ import chipyard._
 import chipyard.harness._
 
 class VC707FPGATestHarness(override implicit val p: Parameters) extends VC707Shell { outer =>
-
+  // println(">>============================================DesignKey resolves to: " + p(DesignKey))
   def dp = designParameters
 
   // Order matters; ddr depends on sys_clock

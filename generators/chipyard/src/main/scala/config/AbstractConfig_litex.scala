@@ -10,7 +10,7 @@ import org.chipsalliance.cde.config.{Config}
 // The default set of HarnessBinders instantiate TestHarness hardware for interacting with ChipTop IOs
 // --------------
 
-class AbstractConfig extends Config(
+class AbstractConfig_litex extends Config(
   // ================================================
   //   Set up TestHarness
   // ================================================
@@ -31,24 +31,24 @@ class AbstractConfig extends Config(
   new chipyard.harness.WithDriveChipIdPin ++                       /** drive chip id pin from harness binder, if chip id pin is present */
   new chipyard.harness.WithSimUARTToUARTTSI ++                     /** connect a SimUART to the UART-TSI port */
   new chipyard.harness.WithOffchipBusSelPlusArg ++             /** drive offchip-bus-sel pin from plusArg */
-  new chipyard.harness.WithClockFromHarness ++                    /** all Clock I/O in ChipTop should be driven by harnessClockInstantiator */
+  new chipyard.harness.WithClockFromHarness ++                     /** all Clock I/O in ChipTop should be driven by harnessClockInstantiator */
   new chipyard.harness.WithResetFromHarness ++                     /** reset controlled by harness */
   new chipyard.harness.WithAbsoluteFreqHarnessClockInstantiator ++ /** generate clocks in harness with unsynthesizable ClockSourceAtFreqMHz */
 
- 
+
   // ================================================
   //   Set up I/O cells + punch I/Os in ChipTop
   // ================================================
   // The IOBinders instantiate ChipTop IOs to match desired digital IOs
   // IOCells are generated for "Chip-like" IOs
-  new chipyard.iobinders.WithSerialTLIOCells ++
+  // new chipyard.iobinders.WithSerialTLIOCells ++
   new chipyard.iobinders.WithDebugIOCells ++
-  new chipyard.iobinders.WithUARTIOCells ++
+  // new chipyard.iobinders.WithUARTIOCells ++
   // new chipyard.iobinders.WithGPIOCells ++
   // new chipyard.iobinders.WithSPIFlashIOCells ++
   new chipyard.iobinders.WithExtInterruptIOCells ++
-  // new chipyard.iobinders.WithChipIdIOCells ++
-  new chipyard.iobinders.WithCustomBootPin ++
+  new chipyard.iobinders.WithChipIdIOCells ++
+  // new chipyard.iobinders.WithCustomBootPin ++
   // The "punchthrough" IOBInders below don't generate IOCells, as these interfaces shouldn't really be mapped to ASIC IO
   // Instead, they directly pass through the DigitalTop ports to ports in the ChipTop
   new chipyard.iobinders.WithI2CPunchthrough ++
@@ -70,38 +70,38 @@ class AbstractConfig extends Config(
   //   Set up External Memory and IO Devices
   // ================================================
   // External memory section
-  new testchipip.serdes.WithSerialTL(Seq(                           /** add a serial-tilelink interface */
-    testchipip.serdes.SerialTLParams(
-      client = Some(testchipip.serdes.SerialTLClientParams(totalIdBits=4)), // serial-tilelink interface will master the FBUS, and support 4 idBits
-      phyParams = testchipip.serdes.DecoupledExternalSyncSerialPhyParams(phitWidth=32, flitWidth=32) // serial-tilelink interface with 32 lanes
-    )
-  )) ++
-  new freechips.rocketchip.subsystem.WithNMemoryChannels(1) ++         /** Default 1 AXI-4 memory channels */
-  new freechips.rocketchip.subsystem.WithNoMMIOPort ++                 /** no top-level MMIO master port (overrides default set in rocketchip) */
-  new freechips.rocketchip.subsystem.WithNoSlavePort ++                /** no top-level MMIO slave port (overrides default set in rocketchip) */
+  // new testchipip.serdes.WithSerialTL(Seq(                           /** add a serial-tilelink interface */
+  //   testchipip.serdes.SerialTLParams(
+  //     client = Some(testchipip.serdes.SerialTLClientParams(totalIdBits=4)), // serial-tilelink interface will master the FBUS, and support 4 idBits
+  //     phyParams = testchipip.serdes.DecoupledExternalSyncSerialPhyParams(phitWidth=32, flitWidth=32) // serial-tilelink interface with 32 lanes
+  //   )
+  // )) ++
+  // new freechips.rocketchip.subsystem.WithNMemoryChannels(1) ++         /** Default 1 AXI-4 memory channels */
+  // new freechips.rocketchip.subsystem.WithNoMMIOPort ++                 /** no top-level MMIO master port (overrides default set in rocketchip) */
+  // new freechips.rocketchip.subsystem.WithNoSlavePort ++                /** no top-level MMIO slave port (overrides default set in rocketchip) */
 
   // MMIO device section
-  new chipyard.config.WithUART ++                                  /** add a UART */
+  // new chipyard.config.WithUART ++                                  /** add a UART */
 
 
   // ================================================
-  // //   Set up Debug/Bringup/Testing Features
+  //   Set up Debug/Bringup/Testing Features
   // ================================================
   // JTAG
-  new freechips.rocketchip.subsystem.WithDebugSBA ++                /** enable the SBA (system-bus-access) feature of the debug module */
-  new chipyard.config.WithDebugModuleAbstractDataWords(8) ++        /** increase debug module data word capacity */
-  new freechips.rocketchip.subsystem.WithJtagDTM ++                 /** set the debug module to expose a JTAG port */
+  // new freechips.rocketchip.subsystem.WithDebugSBA ++                /** enable the SBA (system-bus-access) feature of the debug module */
+  // new chipyard.config.WithDebugModuleAbstractDataWords(8) ++        /** increase debug module data word capacity */
+  // new freechips.rocketchip.subsystem.WithJtagDTM ++                 /** set the debug module to expose a JTAG port */
 
-  // Boot Select Pins
-  new testchipip.boot.WithCustomBootPin ++                          /** add a custom-boot-pin to support pin-driven boot address */
-  new testchipip.boot.WithBootAddrReg ++                            /** add a boot-addr-reg for configurable boot address */
+  // // Boot Select Pins
+  // new testchipip.boot.WithCustomBootPin ++                          /** add a custom-boot-pin to support pin-driven boot address */
+  // new testchipip.boot.WithBootAddrReg ++                            /** add a boot-addr-reg for configurable boot address */
 
 
   // ================================================
   //   Set up Interrupts
   // ================================================
   // CLINT and PLIC related settings goes here
-  new freechips.rocketchip.subsystem.WithNExtTopInterrupts(0) ++    /** no external interrupts */
+  // new freechips.rocketchip.subsystem.WithNExtTopInterrupts(0) ++    /** no external interrupts */
 
 
   // ================================================

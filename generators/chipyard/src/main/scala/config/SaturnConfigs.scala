@@ -16,14 +16,21 @@ class MINV64D64RocketConfig extends Config(
   new freechips.rocketchip.rocket.WithNHugeCores(1) ++
   new chipyard.config.AbstractConfig)
 
-class MINV128D64RocketConfig extends Config(
+class MINV128D64RocketConfig_litex extends Config(
   new saturn.rocket.WithRocketVectorUnit(128, 64, VectorParams.minParams) ++
-  // new freechips.rocketchip.rocket.WithNHugeCores(1) ++
-  new freechips.rocketchip.system.LitexConfigBig1x1 ++
-  new chipyard.config.AbstractConfig
+  new freechips.rocketchip.rocket.WithNHugeCores(1) ++
+  // new freechips.rocketchip.system.LitexConfigBig1x1 ++
+  new chipyard.config.AbstractConfig_litex
   ){
   println("Using Config: MINV128D64RocketConfig")
 }
+
+class MINV128D64RocketConfig extends Config(
+  new saturn.rocket.WithRocketVectorUnit(128, 64, VectorParams.minParams) ++
+  new freechips.rocketchip.rocket.WithNHugeCores(1) ++
+  // new freechips.rocketchip.system.LitexConfigBig1x1 ++
+  new chipyard.config.AbstractConfig
+  )
 
 class MINV256D64RocketConfig extends Config(
   new saturn.rocket.WithRocketVectorUnit(256, 64, VectorParams.minParams) ++

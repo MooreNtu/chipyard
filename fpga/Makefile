@@ -14,7 +14,7 @@ sim_name := none
 #########################################################################################
 # include shared variables
 #########################################################################################
-SUB_PROJECT ?= vcu118
+SUB_PROJECT ?= zcu102
 
 ifeq ($(SUB_PROJECT),vc707)
 	SBT_PROJECT       ?= chipyard_fpga
@@ -86,18 +86,18 @@ ifeq ($(SUB_PROJECT),arty100t)
 	BOARD             ?= arty_a7_100
 	FPGA_BRAND        ?= xilinx
 endif
-ifeq ($(SUB_PROJECT),datastorm)
-	SBT_PROJECT       ?= chipyard_fpga
-	MODEL             ?= DatastormHarness
-	VLOG_MODEL        ?= DatastormHarness
-	MODEL_PACKAGE     ?= chipyard.fpga.datastorm
-	CONFIG            ?= RocketDatastormConfig
-	CONFIG_PACKAGE    ?= chipyard.fpga.datastorm
+ifeq ($(SUB_PROJECT),zcu102)
+	SBT_PROJECT	      ?= chipyard_fpga
+	MODEL             ?= ZCU102FPGATestHarness
+	VLOG_MODEL        ?= ZCU102FPGATestHarness
+	MODEL_PACKAGE     ?= chipyard.fpga.zcu102
+	CONFIG            ?= RocketZCU102Config
+	CONFIG_PACKAGE    ?= chipyard.fpga.zcu102
 	GENERATOR_PACKAGE ?= chipyard
-	TB                ?= none # unused
+	TB                ?= none
 	TOP               ?= ChipTop
-	BOARD			  ?= trenz_datastorm
-	FPGA_BRAND        ?= altera
+	BOARD             ?= zcu102
+	FPGA_BRAND        ?= xilinx
 endif
 
 export USE_CHISEL6=1
@@ -146,11 +146,9 @@ all_vsrcs := \
 # combine all sources into single .f
 synth_list_f := $(build_dir)/$(long_name).vsrcs.f
 $(synth_list_f): $(sim_common_files) $(all_vsrcs)
-	rm -f $@
 	$(foreach file,$(all_vsrcs),echo "$(file)" >> $@;)
 	cat $(sim_common_files) >> $@
 
-ifeq ($(FPGA_BRAND),xilinx)
 BIT_FILE := $(build_dir)/obj/$(MODEL).bit
 $(BIT_FILE): $(synth_list_f)
 	cd $(build_dir); vivado \
@@ -161,17 +159,6 @@ $(BIT_FILE): $(synth_list_f)
 			-F "$(synth_list_f)" \
 			-board "$(BOARD)" \
 			-ip-vivado-tcls "$(shell find '$(build_dir)' -name '*.vivado.tcl')"
-endif
-ifeq ($(FPGA_BRAND),altera)
-BIT_FILE := $(build_dir)/output_files/$(MODEL).qsf
-$(BIT_FILE): $(synth_list_f)
-	cd $(build_dir); quartus_sh \
-		-t $(fpga_common_script_dir)/quartus.tcl \
-		"$(MODEL)" \
-		"$(BOARD)" \
-		"$(long_name)" \
-		"$(shell find '$(build_dir)' -name '*.quartus.tcl')"
-endif
 
 .PHONY: bitstream
 bitstream: $(BIT_FILE)
